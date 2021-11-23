@@ -1,0 +1,115 @@
+﻿<Window x:Class="WPF_Study.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Study"
+        mc:Ignorable="d"
+        Title="myWPF" Height="450" Width="800" WindowStyle="ThreeDBorderWindow">
+    <Grid x:Name ="myWPF" Background="#FF54706D">
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="1" Grid.Row="0" Content="10101" FontSize="50"></Button>
+        <Button Grid.Column="4" Grid.Row="4" Content="4040" FontSize="50"></Button>
+        <Button Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Content="20202" FontSize="50"></Button>-->
+
+        <!-- ЮНИФОРМ ГРИД, ПОСТОЛБНО ЗАПОЛНЯЕТ 
+        <UniformGrid Rows="5" Columns="4"> 
+
+            <Button Content="1"></Button>
+        </UniformGrid>-->
+
+        <!-- C СПЛИТЕРОМ
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Content="1" Background="#FF286FAA"></Button>
+            <GridSplitter Grid.Column="1" Width="8" VerticalAlignment="Stretch" HorizontalAlignment="Center"></GridSplitter>
+            <Button Grid.Column="3" Content="2" Background="#FF681313"></Button>
+
+        </Grid>-->
+
+        <!-- СТЕК ПАНЕЛЬ ТРИ КНОПКИ ПО БОКАМ
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Background="BurlyWood" Width="50" Content="1"/>
+            <Button Background="Aqua" Width="50" Content="2"></Button>
+            <Button Background="BlueViolet" Width="50" Content="3"></Button>
+        </StackPanel>-->
+
+        <!--<DockPanel>
+            <Button DockPanel.Dock="Top" Content="UP"></Button>
+            <Button DockPanel.Dock="Bottom" Content="bottom"></Button>
+            <Button DockPanel.Dock="Left" Content="left"></Button>
+            <Button DockPanel.Dock="Right" Content="right"></Button>
+            <Button Content="Buttom"></Button>
+        </DockPanel>-->
+
+        <!--Стек сжимает элементы, а врапПанель переставляет их-->
+        <!--<WrapPanel Orientation="Vertical" ItemHeight="50" ItemWidth="100">
+            <Button Content="1"></Button>
+            <Button Content="2312"></Button>
+            <Button Content="2"></Button>
+            <Button Content="3"></Button>
+            <Button Content="6754"></Button>
+            <Button Content="453"></Button>
+            <Button Content="453"></Button>
+            <Button Content="453"></Button>
+        </WrapPanel>-->
+
+
+        <!--Редко используется четко кидает якорь в заданые параметры, преобраз на любых мониторах-->
+        <!--<Canvas>
+            <Calendar Canvas.Bottom="43"></Calendar>
+            <Button Content="222222323"></Button>
+            <Button Content="224234234323" Canvas.Left="50" Canvas.Top="50" Canvas.Right="34"></Button>
+        </Canvas>-->
+
+        <!--ОТСТУПЫ MARGIN / СЛОИ ZINDEX-->
+        <!--<Button Width="100" Height="75" 
+                Content="Я кнопочЬка"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="50 50 0 0">
+        </Button>-->
+
+        <!-- VISIBILITY PADING-->
+        <!--<StackPanel Orientation="Vertical">
+            <Button Background="BurlyWood" Width="50" Content="1" Visibility="Collapsed"/>
+            <Button Background="Aqua" Width="50" Content="2" Visibility="Hidden"></Button>
+            <Button
+                Background="BlueViolet" 
+                Visibility="Visible" 
+                Padding="50 50 0 0">
+                <Button.Content>
+                    <TextBox Text="432423423432" />
+                </Button.Content>
+            </Button>
+        </StackPanel>-->
+
+
+
+    </Grid>
+</Window>
