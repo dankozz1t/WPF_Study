@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:local="clr-namespace:WPF_Study"
         mc:Ignorable="d"
-        Title="myWPF" Height="450" Width="800" WindowStyle="ThreeDBorderWindow">
+        Title="myWPF" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid x:Name ="myWPF" Background="#FF54706D">
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -110,6 +112,167 @@
         </StackPanel>-->
 
 
+        <!-- ПАНЕЛЬКА ПРИ НАВОДЕ НА ОБЬЕКТ-->
+        <!--<StackPanel>
+            <Button Content="Text" Width="100" Height="100">
+                <Button.ToolTip>
+                    <ToolTip Width="100" Height="100">
+                        <StackPanel>
+                            <TextBlock Text="Я котЭк"></TextBlock>
+                            <Image Source="3ZpoCLTi_400x400.jpg"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+        <Button x:Name="b2" Width="150" Height="70" Content="PopUp" MouseEnter="b2_MouseEnter"></Button>
+        <Popup x:Name="p1" Width="100" Height="30" StaysOpen="False" Placement="MousePoint">
+            <TextBlock Text="НАЖМИ СЮДА" Background="BurlyWood" Opacity="0.8"></TextBlock>
+        </Popup>-->
+
+        <!-- GroupBox и выезжающие элементы с радиокнопками -->
+        <!--<GroupBox Margin="10">
+            <GroupBox.Header>
+                <Button Content="Бооольшой GroupBox"/>
+            </GroupBox.Header>
+            <Expander Header="Языки">
+                <StackPanel>
+                    <RadioButton x:Name="r1" GroupName="gr1" Content="C++"></RadioButton>
+                    <RadioButton x:Name="r2" GroupName="gr1" Content="C#"></RadioButton>
+                    <RadioButton x:Name="r3" GroupName="gr1" Content="SQL"></RadioButton>
+                </StackPanel>
+            </Expander>
+        </GroupBox>-->
+
+
+        <!-- TextBlock и работа с текстом -->
+        <!--<TextBlock TextWrapping="Wrap">
+            <Run FontSize="30" Foreground="Aqua">Здравствуй</Run>
+            <Run FontSize="20" Foreground="Red" FontWeight="Bold">,</Run>
+            <Run FontSize="20" Foreground="Aquamarine"> небо в CSharp</Run>
+            <LineBreak/> sdfsaffs a
+        </TextBlock>-->
+
+        <!-- Language="uk-ua" /ru-ru Language code atable -->
+        <!--<TextBox Width="200" Height="30" SpellCheck.IsEnabled="True" Language="uk-ua" Margin="10,64,582,325"/>-->
+
+
+        <!-- Label переключение полей по быстрым клавишам альт + первая буква -->
+        <!--<StackPanel>
+        <Label Width="100" Height="50" Foreground="Blue" Target="{Binding ElementName=t2}" RenderTransformOrigin="0.23,3.48">
+            _Dame
+        </Label>
+        <TextBox Name="t2" Width="200" Height="100"></TextBox>
+
+        <Label Width="100" Height="50" Foreground="Red" Target="{Binding ElementName=t1}">
+            _Name
+        </Label>
+        <TextBox Name="t1" Width="200" Height="100"></TextBox>
+        </StackPanel>-->
+
+        <!-- ListBox Student -->
+        <!--<ListBox Name="ListBox1" Width="300" Height="200" Margin="10,10,482,209" SelectionChanged="ListBox1_SelectionChanged">
+
+            <s:String>Mondey</s:String>
+            <s:String>Mondey2</s:String>
+            <s:String>Mondey3</s:String>
+        </ListBox>-->
+
+        <!-- ListBox + StackPanel (image) SelectionMode -->
+        <!--<ListBox SelectionMode="Extended">
+            <ListBoxItem>
+                <StackPanel Margin="5">
+                    <TextBlock> Я КОТЭК 1 </TextBlock>
+                    <Image Source="3ZpoCLTi_400x400.jpg" Height="100" Margin="5"></Image>
+                </StackPanel>
+            </ListBoxItem>
+
+            <ListBoxItem>
+                <StackPanel Margin="5">
+                    <TextBlock> Я КОТЭК 2</TextBlock>
+                    <Image Source="3ZpoCLTi_400x400.jpg" Height="100" Margin="5"></Image>
+                </StackPanel>
+            </ListBoxItem>
+
+            <ListBoxItem>
+                <StackPanel Margin="5">
+                    <TextBlock> Я КОТЭК 3</TextBlock>
+                    <Image Source="3ZpoCLTi_400x400.jpg" Height="100" Margin="5"></Image>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>-->
+
+
+        <!-- ComboBox Выпадающий список  -->
+        <!--<ComboBox Width="160" Height="25" IsEditable="True" Foreground="#FF2D683D" StaysOpenOnEdit="True">
+            <ComboBoxItem IsSelected="True">
+                <TextBlock Background="#FFB28181"> Понедельник</TextBlock>
+            </ComboBoxItem>
+
+            <TextBlock> Вторник</TextBlock>
+            <TextBlock> Среда</TextBlock>
+            <StackPanel>
+                <TextBlock>Я Четверговый КОТЭК</TextBlock>
+                <Image Source="3ZpoCLTi_400x400.jpg" Height="50"></Image>
+            </StackPanel>
+            <TextBlock> Пятница</TextBlock>
+
+            <Separator/>
+            <CheckBox > ferff </CheckBox>
+
+        </ComboBox>-->
+
+
+        <!--ListView Привязка студентов к листу-->
+        <!--<ListView ItemsSource="{DynamicResource ResourceKey=students}" Height="150" Width="250" Background="#FF74815E">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Bd}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <sys:ArrayList x:Key="students">
+                    <local:Student Name ="Alex"/>
+                    <local:Student Name ="Mark"/>
+                    <local:Student Name ="Serg"/>
+                    <local:Student Name ="Vlad"/>
+                </sys:ArrayList>
+            </ListView.Resources>
+        </ListView>-->
+
+
+        <!--TabControl Панель верхняя (закладки)-->
+        <TabControl>
+            <TabItem Height="50" Width="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Red"></Rectangle>
+                        <TextBlock Text="Языки" Margin="5,0,0,0"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+
+            <TabItem Header="Алекс"></TabItem>
+
+            <TabItem Height="50" Width="100">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Red"></Ellipse>
+                        <TextBlock Text="Языки" Margin="5,0,0,0"></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+
+            <TabItem Height="50" Width="100">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="3ZpoCLTi_400x400.jpg"></Image>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem Header="СОБАКА"></TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
