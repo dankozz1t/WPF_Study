@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Calculator" Icon="Calculator.ico" FontSize="30" Height="489.186" Width="361.492" WindowStartupLocation="CenterScreen">
+        Title="Calculator" Icon="Calculator.ico" FontSize="30" Height="489.186" Width="361.492" WindowStartupLocation="CenterScreen" MinHeight="380" MinWidth="180">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" ></RowDefinition>
@@ -13,17 +13,13 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <!--<TextBox Foreground="SlateGray" Margin="0 0 0 2">32+34=</TextBox>-->
             <TextBlock Name="TextBlockLast" HorizontalAlignment="Right" Margin="5" Foreground="SlateGray"></TextBlock>
             <Separator FontSize="10" Background="Black" VerticalAlignment="Bottom"/>
         </Grid>
 
         <Grid Grid.Row="1">
-            <TextBlock Name="TextBlockFirst" FontSize="60" HorizontalAlignment="Right" Margin="5"></TextBlock>
+            <TextBlock Name="TextBlockFirst" FontSize="60" HorizontalAlignment="Right" Margin="5">0</TextBlock>
             <Separator FontSize="10" Background="Black" VerticalAlignment="Bottom"/>
-            <!--<TextBox></TextBox>-->
-            <!--<TextBlock Name="Date" FontSize="30" HorizontalAlignment="Right" Margin="5" Foreground="SlateGray">0</TextBlock>-->
-            <!--<Separator FontSize="10" Background="Black" VerticalAlignment="Bottom"/>-->
         </Grid>
 
         <Grid Grid.Row="2" >
@@ -41,10 +37,6 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-
-      
-                <TextBlock Grid.Row ="1" TextAlignment="Right" FontSize="35" DockPanel.Dock="Right" Name="TextBlock_Main"></TextBlock>
-      
 
             <Button Grid.Row="0" Grid.Column="0" Margin="2" Content="CE" Click="Button_CE_Click"/>
             <Button Grid.Row="0" Grid.Column="1" Margin="2" Content="C" Click="Button_C_Click"/>
@@ -71,8 +63,6 @@
             <Button Grid.Row="4" Grid.Column="1" Margin="2" Content="0" Click="Button_0_Click"/>
             <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="2" Content="=" Click="Button_Equals_Click"/>
         </Grid>
-
-
 
     </Grid>
 </Window>
