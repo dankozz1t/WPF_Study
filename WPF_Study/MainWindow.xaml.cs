@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace WPF_Study
         {
             InitializeComponent();
 
+          
             //Button button = new Button();
             //button.Width = 100;
             //button.Height = 50;
@@ -46,6 +48,15 @@ namespace WPF_Study
             //    Bd = new DateTime(2002, 08, 20)
             //});
 
+            //List<Student> students = new List<Student>
+            //{
+            //    new Student { Name = "Alex", Bd = new DateTime(2003, 02, 12), Group = "P011"},
+            //    new Student { Name = "MArk", Bd = new DateTime(2002, 06, 20), Group="P213" },
+            //    new Student { Name = "Vlad", Bd = new DateTime(2000, 12, 6), Group="0007" }
+
+            //};
+            //dg1.ItemsSource = students;
+
         }
 
 
@@ -65,6 +76,33 @@ namespace WPF_Study
         //    p1.IsOpen = true;
         //}
 
+
+        private void NewCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void TreeViewItem_Expanded(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem tree = (TreeViewItem)sender;
+            string[] vs = Directory.GetFiles(".");
+            foreach (var item in vs)
+            {
+                tree.Items.Add(item);
+            }
+        }
+
+        //private void ButtonPlay_Click(object sender, RoutedEventArgs e)
+        //{
+        //    media.Source = new Uri(@"G:\ГЗагрузки\Intro2.avi");
+        //}
+
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txt.Text += "sender: " + sender.ToString() + "\n";
+            txt.Text += "source: " + e.Source.ToString() + "\n";
+        }
+
     }
 
 
@@ -72,6 +110,8 @@ namespace WPF_Study
     {
         public string Name { get; set; }
         public DateTime Bd { get; set; } = DateTime.Now;
+
+        public string Group { get; set; }
 
 
         public override string ToString()

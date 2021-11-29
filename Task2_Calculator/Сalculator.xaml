@@ -14,12 +14,12 @@
 
         <Grid Grid.Row="0">
             <!--<TextBox Foreground="SlateGray" Margin="0 0 0 2">32+34=</TextBox>-->
-            <TextBlock Name="TextBlockFirst" HorizontalAlignment="Right" Margin="5" Foreground="SlateGray">32+34=</TextBlock>
+            <TextBlock Name="TextBlockLast" HorizontalAlignment="Right" Margin="5" Foreground="SlateGray"></TextBlock>
             <Separator FontSize="10" Background="Black" VerticalAlignment="Bottom"/>
         </Grid>
 
         <Grid Grid.Row="1">
-            <TextBlock Name="TextBlockLast" FontSize="60" HorizontalAlignment="Right" Margin="5">66</TextBlock>
+            <TextBlock Name="TextBlockFirst" FontSize="60" HorizontalAlignment="Right" Margin="5"></TextBlock>
             <Separator FontSize="10" Background="Black" VerticalAlignment="Bottom"/>
             <!--<TextBox></TextBox>-->
             <!--<TextBlock Name="Date" FontSize="30" HorizontalAlignment="Right" Margin="5" Foreground="SlateGray">0</TextBlock>-->
@@ -42,30 +42,34 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
+      
+                <TextBlock Grid.Row ="1" TextAlignment="Right" FontSize="35" DockPanel.Dock="Right" Name="TextBlock_Main"></TextBlock>
+      
+
             <Button Grid.Row="0" Grid.Column="0" Margin="2" Content="CE" Click="Button_CE_Click"/>
             <Button Grid.Row="0" Grid.Column="1" Margin="2" Content="C" Click="Button_C_Click"/>
             <Button Grid.Row="0" Grid.Column="2" Margin="2" Content="&lt;" Click="Button_LT_Click"/>
             <Button Grid.Row="0" Grid.Column="3" Margin="2" Content="/" Click="Button_Divide_Click"/>
 
-            <Button Grid.Row="1" Grid.Column="0" Margin="2" Content="7"/>
-            <Button Grid.Row="1" Grid.Column="1" Margin="2" Content="8"/>
-            <Button Grid.Row="1" Grid.Column="2" Margin="2" Content="9"/>
-            <Button Grid.Row="1" Grid.Column="3" Margin="2" Content="*"/>
+            <Button Grid.Row="1" Grid.Column="0" Margin="2" Content="7" Click="Button_7_Click"/>
+            <Button Grid.Row="1" Grid.Column="1" Margin="2" Content="8" Click="Button_8_Click"/>
+            <Button Grid.Row="1" Grid.Column="2" Margin="2" Content="9" Click="Button_9_Click"/>
+            <Button Grid.Row="1" Grid.Column="3" Margin="2" Content="*" Click="Button_Multi_Click"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Margin="2" Content="4"/>
-            <Button Grid.Row="2" Grid.Column="1" Margin="2" Content="5"/>
-            <Button Grid.Row="2" Grid.Column="2" Margin="2" Content="6"/>
-            <Button Grid.Row="2" Grid.Column="3" Margin="2" Content="-"/>
+            <Button Grid.Row="2" Grid.Column="0" Margin="2" Content="4" Click="Button_4_Click"/>
+            <Button Grid.Row="2" Grid.Column="1" Margin="2" Content="5" Click="Button_5_Click"/>
+            <Button Grid.Row="2" Grid.Column="2" Margin="2" Content="6" Click="Button_6_Click"/>
+            <Button Grid.Row="2" Grid.Column="3" Margin="2" Content="-" Click="Button_Minus_Click"/>
 
-            <Button Grid.Row="3" Grid.Column="0" Margin="2" Content="1"/>
-            <Button Grid.Row="3" Grid.Column="1" Margin="2" Content="2"/>
-            <Button Grid.Row="3" Grid.Column="2" Margin="2" Content="3"/>
-            <Button Grid.Row="3" Grid.Column="3" Margin="2" Content="+"/>
+            <Button Grid.Row="3" Grid.Column="0" Margin="2" Content="1" Click="Button_1_Click"/>
+            <Button Grid.Row="3" Grid.Column="1" Margin="2" Content="2" Click="Button_2_Click"/>
+            <Button Grid.Row="3" Grid.Column="2" Margin="2" Content="3" Click="Button_3_Click"/>
+            <Button Grid.Row="3" Grid.Column="3" Margin="2" Content="+" Click="Button_Plus_Click"/>
 
 
-            <Button Grid.Row="4" Grid.Column="0" Margin="2" Content="."/>
-            <Button Grid.Row="4" Grid.Column="1" Margin="2" Content="0"/>
-            <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="2" Content="="/>
+            <Button Grid.Row="4" Grid.Column="0" Margin="2" Content="." Click="Button_Dot_Click"/>
+            <Button Grid.Row="4" Grid.Column="1" Margin="2" Content="0" Click="Button_0_Click"/>
+            <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="2" Content="=" Click="Button_Equals_Click"/>
         </Grid>
 
 

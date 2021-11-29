@@ -8,6 +8,11 @@
         xmlns:local="clr-namespace:WPF_Study"
         mc:Ignorable="d"
         Title="myWPF" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="NewCommand_CanExecute"/>
+    </Window.CommandBindings>
+
     <Grid x:Name ="myWPF" Background="#FF54706D">
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -243,7 +248,7 @@
 
 
         <!--TabControl Панель верхняя (закладки)-->
-        <TabControl>
+        <!--<TabControl>
             <TabItem Height="50" Width="100">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -272,7 +277,162 @@
                 </TabItem.Header>
             </TabItem>
             <TabItem Header="СОБАКА"></TabItem>
-        </TabControl>
+        </TabControl>-->
 
+
+
+        <!--Меню и биндинг команд-->
+        <!--<Menu Height="24" VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Create">
+                    <MenuItem Command="New" />
+                    <MenuItem Header="Новый проект WPF"></MenuItem>
+                    <MenuItem Header="Новый проект WindowsForm"></MenuItem>
+                </MenuItem>
+                <MenuItem Command="Open" />
+                <MenuItem Command="Save" />
+                <Separator/>
+                <MenuItem Header="Выход"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Правка">
+                <MenuItem Command="Paste" />
+                <MenuItem Command="Copy" />
+                <MenuItem Command="Cut" />
+
+            </MenuItem>
+            <MenuItem Header="Вид"></MenuItem>
+            <MenuItem Header="Git"></MenuItem>
+        </Menu>-->
+
+
+        <!--ToolBar-->
+        <!--<ToolBarTray Margin="0,24,0,0" VerticalAlignment="Top" Height="50">
+            <ToolBar>
+                <ToggleButton>
+                    <Image Width="24" Source="3ZpoCLTi_400x400.jpg"></Image>
+                </ToggleButton>
+                <Button>
+                    <Image Width="24" Source="3ZpoCLTi_400x400.jpg"></Image>
+                </Button>
+                <Separator/>
+                <ComboBox Width="200">
+                    <ComboBoxItem IsSelected="True">
+                        <TextBlock> Понедельник</TextBlock>
+                    </ComboBoxItem>
+
+                    <TextBlock> Вторник</TextBlock>
+                    <TextBlock> Среда</TextBlock>
+                    <StackPanel>
+                        <TextBlock>Я Четверговый КОТЭК</TextBlock>
+                        <Image Source="3ZpoCLTi_400x400.jpg" Height="20"></Image>
+                    </StackPanel>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>-->
+
+        <!--TreeView Большой список (дерево) Вложенный-->
+        <!--<TreeView Height="300" Margin="0,24,0,95" Background="#FFF9E4DA">
+            <TreeViewItem Width="200" HorizontalAlignment="Left" Header="Языки">
+                <TreeViewItem Header="C++"></TreeViewItem>
+                <TreeViewItem Header="C#"></TreeViewItem>
+                <TreeViewItem Header="C"></TreeViewItem>
+                <TreeViewItem Header="АНГЛИЙСКИЙ">
+                    <TreeViewItem Header="Американский"></TreeViewItem>
+                    <TreeViewItem Header="Британский"></TreeViewItem>
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Width="200" HorizontalAlignment="Left" Header="Погода">
+                <TreeViewItem Header="Солнечно"></TreeViewItem>
+                <TreeViewItem Header="Пасмурно"></TreeViewItem>
+                <TreeViewItem Header="Дождь"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Width="200" HorizontalAlignment="Left" Header="Игры">
+                <TreeViewItem Header="Боевики"></TreeViewItem>
+                <TreeViewItem Header="Хоррор"></TreeViewItem>
+                <TreeViewItem Header="Казуалки"></TreeViewItem>
+
+                <TreeViewItem Header="Для детей">
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="20" Fill="HotPink" />
+                        <TextBlock Margin="5 0 0 0">Для девочек</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="20" Fill="RoyalBlue" />
+                        <TextBlock Margin="5 0 0 0">Для Мальчиков</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="20" RadiusX="5" RadiusY="15" Fill="Green" />
+                        <TextBlock Margin="5 0 0 0">Для всех детей</TextBlock>
+                    </StackPanel>
+                </TreeViewItem>
+            </TreeViewItem>
+
+            <TreeViewItem Width="200" HorizontalAlignment="Left" Header="18+" Expanded="TreeViewItem_Expanded">
+                <TreeViewItem Header="Ди"></TreeViewItem>
+            </TreeViewItem>
+        </TreeView>-->
+
+        <!--DataGrid Табличная форма, так уже редко кто использует Данные приязываются ресурсами с ХАМЛ-->
+        <!--<DataGrid ItemsSource="{DynamicResource ResourceKey=students}">
+            <DataGrid.Resources>
+                <sys:ArrayList x:Key="students">
+                    <local:Student Name ="AlexЧ" Group="P11"/>
+                    <local:Student Name ="MarkЧ" Group="P11"/>
+                    <local:Student Name ="SergЧ" Group="P011"/>
+                    <local:Student Name ="VladЧ" Group="P012"/>
+                </sys:ArrayList>
+            </DataGrid.Resources>
+        </DataGrid>-->
+
+
+        <!--DataGridДанные приязываются годом черезе (ИМЯ) лист   dg1.ItemsSource = students; -->
+        <!-- Сам строю табличку DataGrid.Columns -->
+        <!--<DataGrid x:Name="dg1" RowBackground="Bisque" AlternatingRowBackground="Wheat">
+            <DataGrid.Items>
+                <local:Student Name ="AlexЧ" Group="P11"/>
+                <local:Student Name ="MarkЧ" Group="P11"/>
+                <local:Student Name ="SergЧ" Group="P011"/>
+                <local:Student Name ="VladЧ" Group="P012"/>
+            </DataGrid.Items>
+            <DataGrid.Columns>
+                <DataGridHyperlinkColumn Header="Имя" Binding="{Binding Path=Name}" Width="200"/>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Path=Bd}"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding Path=Group}"/>
+                <DataGridCheckBoxColumn Header="Допуск"/>
+            </DataGrid.Columns>
+        </DataGrid>-->
+
+
+        <!--<Slider Name="Slider" Width="300" Height="50" 
+                Margin="0,25,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                SelectionStart="4" SelectionEnd="7"
+                IsSelectionRangeEnabled="True" TickPlacement="BottomRight"/>
+
+        <ProgressBar Name="ProgressBar" Height="100" Width="50" Orientation="Vertical" Margin="10,130,732,189"></ProgressBar>-->
+
+
+
+        <!--<MediaElement x:Name="media" Source="G:\ГЗагрузки\zxc.mp3" Margin="128,80,120,36"></MediaElement>-->
+        <!--<MediaElement x:Name="media" Margin="95,62,396,162"/>
+        <Button Name="ButtonPlay" 
+                Margin="161,262,457,109" 
+                Click="ButtonPlay_Click" 
+                Content="ЗАПУСТИТЬ ВИДЕО"
+                FontSize="14"
+                FontWeight="Bold"/>-->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" PreviewMouseDown="StackPanel_MouseDown">
+
+            <Button x:Name="bt1" Width="100" Height="50" Margin="15" MouseDown="StackPanel_MouseDown">
+                <Ellipse Width="40" Height="40" Fill="Red"  MouseDown="StackPanel_MouseDown" />
+            </Button>
+
+            <TextBlock x:Name="txt" Grid.Column="1" Padding="10" />
+        </StackPanel>
     </Grid>
 </Window>
