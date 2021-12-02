@@ -55,7 +55,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomMyControl.xaml.cs">
+      <DependentUpon>CustomMyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DBGroupWindow.xaml.cs">
+      <DependentUpon>DBGroupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DBContext.cs" />
+    <Compile Include="Entity\Group.cs" />
+    <Compile Include="Entity\Person.cs" />
+    <Compile Include="Entity\Student.cs" />
+    <Compile Include="Entity\Teacher.cs" />
+    <Compile Include="View\GroupDetails.xaml.cs">
+      <DependentUpon>GroupDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowTemplate.xaml.cs">
+      <DependentUpon>WindowTemplate.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CustomMyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DBGroupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,6 +100,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\GroupDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -113,5 +146,6 @@
   <ItemGroup>
     <Resource Include="Pictures\Icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
