@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Study_ServerManager"
         mc:Ignorable="d"
-        Title="Тестовая фигушка" Height="450" Width="671" Background="{DynamicResource Background}" Icon="Pictures/Icon.png">
+        Title="Тестовая фигушка" Height="500" Width="670" Background="{DynamicResource Background}" Icon="Pictures/Icon.png">
 
     <Grid>
 
@@ -21,10 +21,10 @@
 
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="{DynamicResource TopPanelColor}">
-            <Expander Header="Тема" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" ExpandDirection="Right" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" >
+            <Expander Header="Тема" Foreground="{DynamicResource ForegroundText}" HorizontalAlignment="Left" VerticalAlignment="Top" ExpandDirection="Right" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" >
                 <StackPanel>
-                    <RadioButton x:Name="themeDark" GroupName="theme" Content="Темная" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsChecked="True" Checked="themeDark_Checked"></RadioButton>
-                    <RadioButton x:Name="themeLight" GroupName="theme" Content="Светлая" Background="White" Foreground="White" Checked="themeLight_Checked"></RadioButton>
+                    <RadioButton x:Name="themeDark" GroupName="theme" Content="Темная" Foreground="{DynamicResource ForegroundText}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsChecked="True" Checked="themeDark_Checked"></RadioButton>
+                    <RadioButton x:Name="themeLight" GroupName="theme" Content="Светлая" Foreground="{DynamicResource ForegroundText}" Checked="themeLight_Checked"></RadioButton>
                 </StackPanel>
             </Expander>
         </Grid>
