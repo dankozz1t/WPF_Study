@@ -58,7 +58,7 @@
     <Compile Include="DBGroupProj\DBGroupWindow.xaml.cs">
       <DependentUpon>DBGroupWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DBGroupProj\Data\DBContext.cs" />
+    <Compile Include="DBGroupProj\DataBase\DBContext.cs" />
     <Compile Include="Entity\Group.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\Student.cs" />
