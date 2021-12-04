@@ -55,40 +55,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CustomMyControl.xaml.cs">
-      <DependentUpon>CustomMyControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DBGroupWindow.xaml.cs">
+    <Compile Include="DBGroupProj\DBGroupWindow.xaml.cs">
       <DependentUpon>DBGroupWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\DBContext.cs" />
+    <Compile Include="DBGroupProj\Data\DBContext.cs" />
     <Compile Include="Entity\Group.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\Teacher.cs" />
-    <Compile Include="View\GroupDetails.xaml.cs">
+    <Compile Include="DBGroupProj\View\GroupDetails.xaml.cs">
       <DependentUpon>GroupDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowTemplate.xaml.cs">
-      <DependentUpon>WindowTemplate.xaml</DependentUpon>
-    </Compile>
-    <Page Include="CustomMyControl.xaml">
+    <Page Include="DBGroupProj\ResourseDictDBGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DarkTheme.xaml">
+    <Page Include="TestThemeProj\DarkTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DBGroupWindow.xaml">
+    <Page Include="DBGroupProj\DBGroupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LightTheme.xaml">
+    <Page Include="TestThemeProj\LightTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="TestThemeProj\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -96,15 +90,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="TestThemeProj\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\GroupDetails.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowTemplate.xaml">
+    <Page Include="DBGroupProj\View\GroupDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
