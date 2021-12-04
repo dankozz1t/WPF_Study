@@ -15,9 +15,10 @@ namespace WPF_Study_ServerManager.Entity
         public event Action<string> Notify;
         public event Action<string> Error;
 
-        public string FileName = "myDb.xml";
+        public string FileName = @"..\..\DBGroupProj\Save\DateBaseSave.xml";
 
         public List<Group> Groups { get; set; } = new List<Group>();
+
 
         public void Seed()
         {
@@ -45,7 +46,7 @@ namespace WPF_Study_ServerManager.Entity
                 using (FileStream fs = new FileStream(FileName, FileMode.OpenOrCreate))
                 {
                     Groups = (List<Group>)formatter.Deserialize(fs);
-                    Notify("Load Ok");
+                    Notify("Загрузил базу данных из файла");
                 }
             }
             catch (Exception e)
@@ -53,7 +54,6 @@ namespace WPF_Study_ServerManager.Entity
                 Error(e.Message);
             }
         }
-
 
         public void Save()
         {
@@ -64,7 +64,7 @@ namespace WPF_Study_ServerManager.Entity
                 using (FileStream fs = new FileStream(FileName, FileMode.OpenOrCreate))
                 {
                     formatter.Serialize(fs, Groups);
-                    Notify("Save");
+                    Notify("Сохранил базу данных в файл");
                 }
             }
             catch (Exception e)
