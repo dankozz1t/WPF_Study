@@ -1,0 +1,90 @@
+﻿<Window x:Class="WPF_Study_ServerManager.DBGroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:WPF_Study_ServerManager.View"
+        mc:Ignorable="d"
+        Title="Типо база данных" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourseDictDBGroup.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.08*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="100" MaxWidth="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <view:GroupDetails x:Name="groupDetails" Grid.Row="1" Grid.Column="1"></view:GroupDetails>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Content="Добавить" Style="{StaticResource ButtonStyle}"></Button>
+                <Button Grid.Column="1" Content="Добавить" Style="{StaticResource ButtonStyle}"></Button>
+                <Button Grid.Column="2" Content="Добавить" Style="{StaticResource ButtonStyle}"></Button>
+
+            </Grid>
+   
+
+
+        </Grid>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Background="#FF74815E">
+            <ListBox Name="Groups" ItemsSource="{Binding }" Background="{x:Null}" BorderBrush="#FF24470C" SelectionChanged="Groups_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock FontSize="20" Text="{Binding Name}" FontWeight="Bold"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="15" Text="{Binding teacher.FirstName}"></TextBlock>
+                                <TextBlock FontSize="15" Text=" "></TextBlock>
+                                <TextBlock FontSize="15" Text="{Binding teacher.SecondName}" Foreground="#FF4D2020" FontWeight="Bold"></TextBlock>
+                            </StackPanel>
+                            <Separator></Separator>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="15" Text="Количество студентов: "></TextBlock>
+                                <TextBlock FontSize="15" Text="{Binding Students.Count}"></TextBlock>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+
+        </StackPanel>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" Background="#FFCBDAC0">
+            <MenuItem Header="File" >
+                <MenuItem Header="Load"  Click="MenuItem_Load_Click"></MenuItem>
+                <MenuItem Header="Save" Click="MenuItem_Save_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Click="MenuItem_Exit_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="DataBase">
+                <MenuItem Header="Seeding"  Click="MenuItem_Seeding_Click"></MenuItem>
+                <MenuItem Header="Delete"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
