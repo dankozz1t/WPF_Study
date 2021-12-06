@@ -1,0 +1,47 @@
+﻿<Window x:Class="WPF_Study_ServerManager.DBGroupProj.DataBase.AddEntity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Study_ServerManager.DBGroupProj.DataBase"
+        mc:Ignorable="d"
+        Title="Добавление" Height="155.251" Width="268.182" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Icon="AdGuard_Alt.png">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourseDictDBGroup.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="{DynamicResource BackgroundLeftPanel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Имя:" FontSize="15" Foreground="{DynamicResource ForegroundHeadingText}" />
+        <TextBox Name="StudentFirstName" Grid.Column="1" Grid.Row="0" Background="{DynamicResource ForegroundText}" FontSize="18"/>
+
+
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Фамилия:" FontSize="15" Foreground="{DynamicResource ForegroundHeadingText}" />
+        <TextBox Name="StudentSecondName" Grid.Column="1" Grid.Row="1" Background="{DynamicResource ForegroundText}" FontSize="18"/>
+
+
+        <TextBlock Name="BonusTextBlock" Grid.Column="0" Grid.Row="2" Text="" FontSize="15" Foreground="{DynamicResource ForegroundHeadingText}"/>
+        <TextBox Name="StudentBonusField" Grid.Column="1" Grid.Row="2" Background="{DynamicResource ForegroundText}" FontSize="18"/>
+
+
+        <Button  Grid.Column="0" Grid.Row="3" Content="Добавить" Background="{DynamicResource BackgroundTopPanel}" Foreground="{DynamicResource BackgroundRightPanel}" Click="Button_Ok_Click"></Button>
+        <Button  Grid.Column="1" Grid.Row="3" Content="Отмена" Background="{DynamicResource BackgroundTopPanel}" Foreground="{DynamicResource BackgroundRightPanel}" Click="Button_Cancel_Click"></Button>
+    </Grid>
+</Window>
