@@ -50,7 +50,7 @@ namespace WPF_Study_ServerManager
 
         private void MenuItem_Clear_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Удалить базу данных", "Вы уверены что хотите удалить базу данных?",
+            MessageBoxResult result = MessageBox.Show("Вы уверены что хотите удалить базу данных?", "Удалить базу данных",
                 MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (result == MessageBoxResult.Yes)
             {
