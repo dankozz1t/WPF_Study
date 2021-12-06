@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:view="clr-namespace:WPF_Study_ServerManager.View"
         mc:Ignorable="d"
-        Title="Типо база данных" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Типо база данных" Height="500" Width="800" WindowStartupLocation="CenterScreen" Icon="Blocs.png">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -35,43 +35,57 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Content="Добавить" Style="{StaticResource ButtonStyle}" Click="Button_Add_Click"></Button>
+                <Button Grid.Column="1" Content="Удалить" Style="{StaticResource ButtonStyle}" Click="Button_Delete_Click"></Button>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Content="Добавить" Style="{StaticResource ButtonStyle}"></Button>
-                <Button Grid.Column="1" Content="Добавить" Style="{StaticResource ButtonStyle}"></Button>
-                <Button Grid.Column="2" Content="Добавить" Style="{StaticResource ButtonStyle}"></Button>
+                <Button Grid.Column="0" Content="Добавить Студента" Style="{StaticResource ButtonStyle}" Click="Button_AddStudent_Click"></Button>
+                <Button Grid.Column="1" Content="Изменить Студента" Style="{StaticResource ButtonStyle}" Click="Button_Change_Click"></Button>
+                <Button Grid.Column="2" Content="Удалить Студента" Style="{StaticResource ButtonStyle}" Click="Button_DeleteStudent_Click"></Button>
+                <Button Grid.Column="3" Content="Преподаватель" Style="{StaticResource ButtonStyle}" Click="Button_Teacher_Click"></Button>
+
 
             </Grid>
-   
-
-
         </Grid>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Background="#FF74815E">
-            <ListBox Name="Groups" ItemsSource="{Binding }" Background="{x:Null}" BorderBrush="#FF24470C" SelectionChanged="Groups_SelectionChanged">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock FontSize="20" Text="{Binding Name}" FontWeight="Bold"></TextBlock>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="15" Text="{Binding teacher.FirstName}"></TextBlock>
-                                <TextBlock FontSize="15" Text=" "></TextBlock>
-                                <TextBlock FontSize="15" Text="{Binding teacher.SecondName}" Foreground="#FF4D2020" FontWeight="Bold"></TextBlock>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="0"  Style="{StaticResource LeftScrollViewer}" >
+            <StackPanel  Grid.Row="1" Grid.Column="0"  Background="{StaticResource BackgroundLeftPanel}">
+                <ListBox Name="GroupsListBox" ItemsSource="{Binding }" Background="{x:Null}" BorderBrush="{StaticResource BackgroundRightPanel}" SelectionChanged="Groups_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock FontSize="20" Text="{Binding Name}" FontWeight="Bold"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="15" Text="{Binding Teacher.SecondName}" ></TextBlock>
+                                    <TextBlock FontSize="15" Text=" "></TextBlock>
+                                    <TextBlock FontSize="15" Text="{Binding Teacher.FirstName}"></TextBlock>
+                                </StackPanel>
+                                <Separator></Separator>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="15" Text="Количество студентов: "></TextBlock>
+                                    <TextBlock FontSize="15" Text="{Binding Students.Count}"></TextBlock>
+                                </StackPanel>
                             </StackPanel>
-                            <Separator></Separator>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="15" Text="Количество студентов: "></TextBlock>
-                                <TextBlock FontSize="15" Text="{Binding Students.Count}"></TextBlock>
-                            </StackPanel>
-
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-
-            </ListBox>
-
-        </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
 
         <Menu Grid.Row="0" Grid.ColumnSpan="2" FontSize="15" Background="#FFCBDAC0">
             <MenuItem Header="File" >
@@ -82,7 +96,7 @@
             </MenuItem>
             <MenuItem Header="DataBase">
                 <MenuItem Header="Seeding"  Click="MenuItem_Seeding_Click"></MenuItem>
-                <MenuItem Header="Delete"></MenuItem>
+                <MenuItem Header="Clear" Click="MenuItem_Clear_Click"></MenuItem>
             </MenuItem>
         </Menu>
 
