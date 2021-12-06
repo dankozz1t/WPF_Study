@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DBGroupProj\AddEntity.xaml.cs">
+      <DependentUpon>AddEntity.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DBGroupProj\DBGroupWindow.xaml.cs">
       <DependentUpon>DBGroupWindow.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,10 @@
     <Compile Include="DBGroupProj\View\GroupDetails.xaml.cs">
       <DependentUpon>GroupDetails.xaml</DependentUpon>
     </Compile>
+    <Page Include="DBGroupProj\AddEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DBGroupProj\ResourseDictDBGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +143,11 @@
   <ItemGroup>
     <Resource Include="Pictures\Icon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="DBGroupProj\Blocs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DBGroupProj\AdGuard_Alt.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
