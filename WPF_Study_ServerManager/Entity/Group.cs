@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Documents;
 
 namespace WPF_Study_ServerManager.Entity
 {
