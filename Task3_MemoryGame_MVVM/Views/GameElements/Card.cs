@@ -1,27 +1,56 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using Task3_MemoryGame_MVVM.Annotations;
 using Task3_MemoryGame_MVVM.Data;
-using Task3_MemoryGame_MVVM.ViewModels;
 
 namespace Task3_MemoryGame_MVVM.GameElements
 {
-    public class Card : Button
+    public class Card : Button, INotifyPropertyChanged
     {
-        public int CardIndex { get; set; } = 0;
-        public bool isOpen { get; set; } = false;
+        public int CardIndex { get; set; }
 
-        public Card(int CardIndex):base()
+        private bool isOpen;
+        public bool IsOpen
         {
-            this.CardIndex = CardIndex;
+            get => isOpen;
+            set
+            {
+                isOpen = value;
+                Update();
+                OnPropertyChanged(nameof(IsOpen));
+            }
+        }
 
-            Image img = new Image();
-            img.Source = new BitmapImage(new Uri(DBContext.getInstance().Images[CardIndex].FileName));
-            img.Margin = new Thickness(15);
+        private void Update()
+        {
+            if (isOpen)
+            {
+                Image img = new Image
+                {
+                    Source = new BitmapImage(new Uri(DBContext.getInstance().Images[CardIndex].FileName)),
+                    Margin = new Thickness(15)
+                };
 
-            this.Content = img;
+                Content = img;
+            }
+            else
+            {
+                Content = null;
+            }
+        }
 
+        public Card(int cardIndex) : base() => CardIndex = cardIndex;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
