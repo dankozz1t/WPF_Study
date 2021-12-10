@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Runtime.Remoting.Channels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
-using Task3_MemoryGame_MVVM.Data;
 using Task3_MemoryGame_MVVM.GameElements;
 using Task3_MemoryGame_MVVM.ViewModels;
 
@@ -14,10 +11,11 @@ namespace Task3_MemoryGame_MVVM.Views.GamePad
     /// </summary>
     public partial class GamePad : Window
     {
-        public GamePad()
+        public GamePad(int rows, int cols)
         {
             InitializeComponent();
-            DataContext = new ViewModels.VM_GamePad();
+
+            DataContext = new ViewModels.VM_GamePad(rows, cols);
             CreateGamePad();
         }
 
@@ -31,56 +29,60 @@ namespace Task3_MemoryGame_MVVM.Views.GamePad
 
             myGrid.ShowGridLines = true;
 
-            for (int r = 0; r < ((VM_GamePad)DataContext).Rows; r++)
+            if (DataContext is VM_GamePad viewGamePad)
             {
-                RowDefinition rowDef = new RowDefinition();
-                myGrid.RowDefinitions.Add(rowDef);
-            }
-
-            for (int c = 0; c < ((VM_GamePad)DataContext).Cols; c++)
-            {
-                ColumnDefinition colDef = new ColumnDefinition();
-                myGrid.ColumnDefinitions.Add(colDef);
-            }
-
-            for (int r = 0; r < ((VM_GamePad)DataContext).Rows; r++)
-            {
-                for (int c = 0; c < ((VM_GamePad)DataContext).Cols; c++)
+                for (int r = 0; r < viewGamePad.Rows; r++)
                 {
-                    Card card = new Card(((VM_GamePad)DataContext).Cards[r, c]);
+                    RowDefinition rowDef = new RowDefinition();
+                    myGrid.RowDefinitions.Add(rowDef);
+                }
 
-                    card.Click += (sender, args) =>
+                for (int c = 0; c < viewGamePad.Cols; c++)
+                {
+                    ColumnDefinition colDef = new ColumnDefinition();
+                    myGrid.ColumnDefinitions.Add(colDef);
+                }
+
+                for (int row = 0; row < viewGamePad.Rows; row++)
+                {
+                    for (int column = 0; column < viewGamePad.Cols; column++)
                     {
-                        if (((VM_GamePad)DataContext).openCard == null)
+                        Card card = new Card(viewGamePad.Cards[row, column]);
+
+                        card.Click += (sender, args) =>
                         {
-                            ((VM_GamePad)DataContext).openCard = (sender as Card);
-                        }
-                        else
-                        {
-                            if (((VM_GamePad)DataContext).openCard.CardIndex == ((Card)sender).CardIndex)
+                            (sender as Card).IsOpen = true;
+
+                            if (viewGamePad.openCard == null)
                             {
-                                MessageBox.Show("Правильно! Отличная работа!");
-                                myGrid.Children.Remove((UIElement)sender);
-                                myGrid.Children.Remove(((VM_GamePad)DataContext).openCard);
+                                viewGamePad.openCard = (sender as Card);
                             }
                             else
                             {
-                                MessageBox.Show("Неправильно");
+                                if (viewGamePad.openCard.CardIndex == (sender as Card).CardIndex)
+                                {
+                                    MessageBox.Show("Good memory");
+                                    myGrid.Children.Remove((sender as UIElement));
+                                    myGrid.Children.Remove((viewGamePad.openCard as UIElement));
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Bed");
+                                    (sender as Card).IsOpen = false;
+                                    (DataContext as VM_GamePad).openCard.IsOpen = false;
+                                }
+
+                                viewGamePad.openCard = null;
                             }
+                        };
 
-                            ((VM_GamePad)DataContext).openCard = null;
+                        Grid.SetColumn(card, column);
+                        Grid.SetRow(card, row);
 
-                        }
-                          
-                    };
-
-                    Grid.SetColumn(card, c);
-                    Grid.SetRow(card, r);
-
-                    myGrid.Children.Add(card);
+                        myGrid.Children.Add(card);
+                    }
                 }
             }
-
             this.Content = myGrid;
         }
     }
