@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\DBImages\CardToPlay.xaml">
+    <Page Include="Resources\MainСolorTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -63,7 +63,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Menu\GlobalMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -73,17 +73,15 @@
     </Compile>
     <Compile Include="Data\DBContext.cs" />
     <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\OutlinedText.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\VM_GamePad.cs" />
-    <Compile Include="Views\DBImages\CardToPlay.xaml.cs">
-      <DependentUpon>CardToPlay.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\GameElements\Card.cs" />
     <Compile Include="Views\GamePad\GamePad.xaml.cs">
       <DependentUpon>GamePad.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Menu\GlobalMenu.xaml.cs">
+      <DependentUpon>GlobalMenu.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -113,23 +111,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Public\Image\crown-3-256.png">
+    <Resource Include="Resources\Image\crown-3-256.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Public\Image\discord-2-256.png">
+    <Resource Include="Resources\Image\discord-2-256.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Public\Image\hot-chocolate-256.png">
+    <Resource Include="Resources\Image\hot-chocolate-256.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Public\Image\radioactive-256.png">
+    <Resource Include="Resources\Image\radioactive-256.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Public\Image\puzzle-4-256.png" />
+    <Resource Include="Resources\Image\puzzle-4-256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
