@@ -1,0 +1,70 @@
+﻿<Window x:Class="Task3_MemoryGame_MVVM.GlobalMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:customXaml="clr-namespace:CustomXaml"
+        mc:Ignorable="d"
+        Title="GAME MEMORY" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources> <!--Подключение ресурсов цветовая тема-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/MainСolorTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="{DynamicResource Brown_StoneWall}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" > <!--Верхняя надпись GAME MEMORY-->
+            <customXaml:OutlinedText x:Name="TextContent" FontSize="70" Stroke="Black" StrokeThickness="1" Text="GAME MEMORY" 
+                                         HorizontalAlignment="Center" VerticalAlignment="Center" Bold="True" Font="Showcard Gothic" >
+                <customXaml:OutlinedText.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFE800" Offset="0"/>
+                        <GradientStop Color="#FFFB7121" Offset="1"/>
+                    </LinearGradientBrush>
+                </customXaml:OutlinedText.Fill>
+            </customXaml:OutlinedText>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Margin="100,20,15,20" Foreground="{DynamicResource Orange_Honey}" BorderBrush="{DynamicResource Red_Terracotta}" FontSize="20">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Столбцов" Foreground="{DynamicResource Red_Terracotta}" FontSize="20" ></TextBlock>
+
+                        <TextBlock Name="ColumnsTextBlock" Margin="20,0,0,0" FontSize="20">2</TextBlock>
+                        <Slider Orientation="Horizontal" Width="100" Margin="20,0,0,0" Maximum="8" ValueChanged="Slider_Columns_ValueChanged" TickPlacement="BottomRight" Minimum="2" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Рядов" Foreground="{DynamicResource Red_Terracotta}" FontSize="20"></TextBlock>
+
+                        <TextBlock Name="RowsTextBlock" Margin="55,0,0,0" FontSize="20">2</TextBlock>
+                        <Slider Orientation="Horizontal" Width="100" Margin="20,0,0,0" Maximum="8" ValueChanged="Slider_Rows_ValueChanged" Minimum="2" TickPlacement="BottomRight" />
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+
+
+        </Grid>
+
+
+        <!--Нижняя панель с кнопками-->
+        <Button Grid.Row="2" Grid.Column="0" Width="200" HorizontalAlignment="Right" Margin="0,0,10,10" Background="{DynamicResource Beige_Biscotti}" FontWeight="Bold" FontSize="20" Foreground="{DynamicResource Red_Terracotta}" Click="Button_Play_Click">ИГРАТЬ</Button>
+        <Button Grid.Row="2" Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="10,0,0,10" Background="{DynamicResource Beige_Biscotti}" FontWeight="Bold" FontSize="20" Foreground="{DynamicResource Red_Terracotta}" Click="Button_Exit_Click">ВЫХОД</Button>
+
+    </Grid>
+</Window>
