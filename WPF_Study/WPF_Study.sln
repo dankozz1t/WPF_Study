@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2_Calculator", "..\Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Study_ServerManager", "..\WPF_Study_ServerManager\WPF_Study_ServerManager.csproj", "{9B29B8CE-74C9-40F4-81EB-1C6992761AED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3_MemoryGame_MVVM", "..\Task3_MemoryGame_MVVM\Task3_MemoryGame_MVVM.csproj", "{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9B29B8CE-74C9-40F4-81EB-1C6992761AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B29B8CE-74C9-40F4-81EB-1C6992761AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B29B8CE-74C9-40F4-81EB-1C6992761AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
