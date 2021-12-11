@@ -3,14 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:customXaml="clr-namespace:CustomXaml"
+        xmlns:tools="clr-namespace:Task3_MemoryGame_MVVM.Resources.Tools"
         mc:Ignorable="d"
         Title="GAME MEMORY" Height="450" Width="800" WindowStartupLocation="CenterScreen">
 
-    <Window.Resources> <!--Подключение ресурсов цветовая тема-->
+    <Window.Resources>
+        <!--Подключение ресурсов цветовая тема-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Resources/MainСolorTheme.xaml" />
+                <ResourceDictionary Source="../Resources/ColorTheme/MainСolorTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -27,19 +28,21 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.ColumnSpan="2" > <!--Верхняя надпись GAME MEMORY-->
-            <customXaml:OutlinedText x:Name="TextContent" FontSize="70" Stroke="Black" StrokeThickness="1" Text="GAME MEMORY" 
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" >
+            <!--Верхняя надпись GAME MEMORY-->
+            <tools:OutlinedText x:Name="TextContent" FontSize="70" Stroke="Black" StrokeThickness="1" Text="GAME MEMORY" 
                                          HorizontalAlignment="Center" VerticalAlignment="Center" Bold="True" Font="Showcard Gothic" >
-                <customXaml:OutlinedText.Fill>
+                <tools:OutlinedText.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFE800" Offset="0"/>
                         <GradientStop Color="#FFFB7121" Offset="1"/>
                     </LinearGradientBrush>
-                </customXaml:OutlinedText.Fill>
-            </customXaml:OutlinedText>
+                </tools:OutlinedText.Fill>
+            </tools:OutlinedText>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="0">
+            <!--НАСТРОЙКИ ПОЛЯ-->
             <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Margin="100,20,15,20" Foreground="{DynamicResource Orange_Honey}" BorderBrush="{DynamicResource Red_Terracotta}" FontSize="20">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -56,11 +59,75 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-
-
-
         </Grid>
 
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <!--НАСТРОЙКИ ПОЛЯ-->
+            <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Foreground="{DynamicResource Orange_Honey}" BorderBrush="{DynamicResource Red_Terracotta}" FontSize="20" Margin="15,20,100,20">
+                <WrapPanel Orientation="Horizontal">
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/crown.png" Width="50" HorizontalAlignment="Left"/>
+                        <CheckBox Name="crown" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/discord.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="discord" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/chocolate.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox  Name="chocolate" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/puzzle.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="puzzle" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/radioactive.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="radioactive" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/cocktail.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="cocktail" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/palm.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="palm" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/popcorn.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="popcorn" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/star.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="star" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/sun.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="sun" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/pizza.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="pizza" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Image Source="..\Resources/Images/traffic.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <CheckBox Name="traffic" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
+
+                </WrapPanel>
+            </GroupBox>
+        </Grid>
 
         <!--Нижняя панель с кнопками-->
         <Button Grid.Row="2" Grid.Column="0" Width="200" HorizontalAlignment="Right" Margin="0,0,10,10" Background="{DynamicResource Beige_Biscotti}" FontWeight="Bold" FontSize="20" Foreground="{DynamicResource Red_Terracotta}" Click="Button_Play_Click">ИГРАТЬ</Button>

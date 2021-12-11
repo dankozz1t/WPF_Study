@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Task3_MemoryGame_MVVM.Data;
 using Task3_MemoryGame_MVVM.Views.GamePad;
 
 namespace Task3_MemoryGame_MVVM
@@ -17,9 +19,28 @@ namespace Task3_MemoryGame_MVVM
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            GamePad play = new GamePad(Convert.ToInt32(RowsTextBlock.Text), Convert.ToInt32(ColumnsTextBlock.Text) );
-            play.Show();
-            this.Hide();
+            if (DBContext.getInstance().Images.Count > 1)
+            {
+                int rows = Convert.ToInt32(RowsTextBlock.Text);
+                int columns = Convert.ToInt32(ColumnsTextBlock.Text);
+
+                while (rows * columns % 2 != 0) //Eсли сумма поля нечетная
+                {
+                    if ((columns + 1 * rows) % 2 == 0)
+                        columns++;
+                    else rows++;
+                }
+
+                GamePad play = new GamePad(rows, columns);
+
+                this.Hide();
+                play.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ввыберите картинки", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
         }
 
         private void Button_Exit_Click(object sender, RoutedEventArgs e)
@@ -37,5 +58,21 @@ namespace Task3_MemoryGame_MVVM
             RowsTextBlock.Text = Convert.ToInt32((sender as Slider).Value).ToString();
         }
 
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            string path = @"C:\Users\alexd\source\repos\WPF_Study\Task3_MemoryGame_MVVM\Resources\Images\" + (sender as CheckBox).Name + ".png";
+
+            DBContext.getInstance().Images.Add(new Entities.Image() { FileName = path });
+
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Неправильный путь изображений. Поменяйте его в файле { GlobalMenu.xaml.cs } " +
+                                "в методе { CheckBox_Checked } " +
+                                "переменная { path } ( 57 строка )",
+                    "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                this.Close();
+            }
+        }
     }
 }
