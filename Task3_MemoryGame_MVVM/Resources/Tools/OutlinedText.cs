@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Windows.Media;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Media;
 
-namespace CustomXaml
+namespace Task3_MemoryGame_MVVM.Resources.Tools
 {
     public class OutlinedText : FrameworkElement, IAddChild
     {
