@@ -55,7 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Resources\MainСolorTheme.xaml">
+    <Compile Include="Views\GamePad\TestVictory.xaml.cs">
+      <DependentUpon>TestVictory.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\ColorTheme\MainСolorTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,8 +75,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\DBContext.cs" />
+    <Compile Include="Resources\Tools\AutoClosingMessageBox.cs" />
     <Compile Include="Entities\Image.cs" />
-    <Compile Include="Entities\OutlinedText.cs" />
+    <Compile Include="Resources\Tools\OutlinedText.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\VM_GamePad.cs" />
     <Compile Include="Views\GameElements\Card.cs" />
@@ -84,6 +88,10 @@
       <DependentUpon>GlobalMenu.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\GamePad\TestVictory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -112,21 +120,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Image\crown-3-256.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Image\discord-2-256.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Image\hot-chocolate-256.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Image\radioactive-256.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Resources\Images\chocolate.png" />
+    <Resource Include="Resources\Images\palm.png" />
+    <Resource Include="Resources\Images\traffic.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Image\puzzle-4-256.png" />
+    <Resource Include="Resources\Images\cocktail.png" />
+    <Resource Include="Resources\Images\crown.png" />
+    <Resource Include="Resources\Images\discord.png" />
+    <Resource Include="Resources\Images\pizza.png" />
+    <Resource Include="Resources\Images\popcorn.png" />
+    <Resource Include="Resources\Images\puzzle.png" />
+    <Resource Include="Resources\Images\radioactive.png" />
+    <Resource Include="Resources\Images\star.png" />
+    <Resource Include="Resources\Images\sun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
