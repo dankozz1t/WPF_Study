@@ -60,19 +60,9 @@ namespace Task3_MemoryGame_MVVM
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            string path = @"C:\Users\alexd\source\repos\WPF_Study\Task3_MemoryGame_MVVM\Resources\Images\" + (sender as CheckBox).Name + ".png";
+            string path = @"..\..\Resources\Images\" + (sender as CheckBox).Name + ".png";
 
             DBContext.getInstance().Images.Add(new Entities.Image() { FileName = path });
-
-            if (!File.Exists(path))
-            {
-                MessageBox.Show("Неправильный путь изображений. Поменяйте его в файле { GlobalMenu.xaml.cs } " +
-                                "в методе { CheckBox_Checked } " +
-                                "переменная { path } ( 57 строка )",
-                    "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                this.Close();
-            }
         }
     }
 }

@@ -67,61 +67,61 @@
             <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Foreground="{DynamicResource Orange_Honey}" BorderBrush="{DynamicResource Red_Terracotta}" FontSize="20" Margin="15,20,100,20">
                 <WrapPanel Orientation="Horizontal">
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/crown.png" Width="50" HorizontalAlignment="Left"/>
+                        <Image Source="../Resources/Images/crown.png" Width="50" HorizontalAlignment="Left"/>
                         <CheckBox Name="crown" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/discord.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/discord.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="discord" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/chocolate.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/chocolate.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox  Name="chocolate" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/puzzle.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/puzzle.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="puzzle" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/radioactive.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/radioactive.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="radioactive" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/cocktail.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/cocktail.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="cocktail" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/palm.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/palm.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="palm" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/popcorn.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/popcorn.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="popcorn" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/star.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/star.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="star" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/sun.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/sun.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="sun" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/pizza.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/pizza.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="pizza" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
                     <StackPanel Margin="5">
-                        <Image Source="..\Resources/Images/traffic.png" Width="50" HorizontalAlignment="Left"></Image>
+                        <Image Source="../Resources/Images/traffic.png" Width="50" HorizontalAlignment="Left"></Image>
                         <CheckBox Name="traffic" HorizontalAlignment="Center" Checked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
 

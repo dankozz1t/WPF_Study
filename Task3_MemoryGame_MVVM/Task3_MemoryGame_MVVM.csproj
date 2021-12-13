@@ -119,21 +119,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\chocolate.png" />
-    <Resource Include="Resources\Images\palm.png" />
-    <Resource Include="Resources\Images\traffic.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\cocktail.png" />
     <Resource Include="Resources\Images\crown.png" />
     <Resource Include="Resources\Images\discord.png" />
+    <Resource Include="Resources\Images\palm.png" />
     <Resource Include="Resources\Images\pizza.png" />
     <Resource Include="Resources\Images\popcorn.png" />
     <Resource Include="Resources\Images\puzzle.png" />
     <Resource Include="Resources\Images\radioactive.png" />
     <Resource Include="Resources\Images\star.png" />
     <Resource Include="Resources\Images\sun.png" />
+    <Resource Include="Resources\Images\traffic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

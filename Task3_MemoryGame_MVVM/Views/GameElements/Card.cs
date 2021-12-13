@@ -31,7 +31,7 @@ namespace Task3_MemoryGame_MVVM.GameElements
             {
                 Image img = new Image
                 {
-                    Source = new BitmapImage(new Uri(DBContext.getInstance().Images[CardIndex].FileName)),
+                    Source = new BitmapImage(new Uri(DBContext.getInstance().Images[CardIndex].FileName, UriKind.Relative)),
                     Margin = new Thickness(15)
                 };
 
