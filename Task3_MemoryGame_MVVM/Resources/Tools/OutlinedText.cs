@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace Task3_MemoryGame_MVVM.Resources.Tools
+namespace MemoryGame.Resources.Tools
 {
     public class OutlinedText : FrameworkElement, IAddChild
     {

@@ -1,4 +1,4 @@
-﻿namespace Task3_MemoryGame_MVVM.Entities
+﻿namespace MemoryGame.Entities
 {
     public class Image
     {

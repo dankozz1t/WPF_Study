@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace Task3_MemoryGame_MVVM.Properties
+namespace MemoryGame.Properties
 {
     /// <summary>
     ///   Класс ресурсов со строгим типом для поиска локализованных строк и пр.

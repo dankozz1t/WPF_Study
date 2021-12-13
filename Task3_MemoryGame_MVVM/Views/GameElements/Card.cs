@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
-using Task3_MemoryGame_MVVM.Annotations;
-using Task3_MemoryGame_MVVM.Data;
+using MemoryGame.Annotations;
+using MemoryGame.Data;
 
-namespace Task3_MemoryGame_MVVM.GameElements
+namespace MemoryGame.Views.GameElements
 {
     public class Card : Button, INotifyPropertyChanged
     {
@@ -31,7 +31,7 @@ namespace Task3_MemoryGame_MVVM.GameElements
             {
                 Image img = new Image
                 {
-                    Source = new BitmapImage(new Uri(DBContext.getInstance().Images[CardIndex].FileName, UriKind.Relative)),
+                    Source = new BitmapImage(new Uri(DataBaseContext.GetInstance().Images[CardIndex].FileName, UriKind.Relative)),
                     Margin = new Thickness(15)
                 };
 

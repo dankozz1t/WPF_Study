@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows;
 
-namespace Task3_MemoryGame_MVVM.Entities
+namespace MemoryGame.Entities
 {
     /// <summary>
-    /// Автоматическое закрывание MessageBox на нужное время
+    /// Автоматическое закрывание MessageBox на нужное время (таймер)
     /// </summary>
     public class AutoClosingMessageBox
     {

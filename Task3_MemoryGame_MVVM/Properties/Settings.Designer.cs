@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace Task3_MemoryGame_MVVM.Properties
+namespace MemoryGame.Properties
 {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]

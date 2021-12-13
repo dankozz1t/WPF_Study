@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Task3_MemoryGame_MVVM
+namespace MemoryGame
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
