@@ -4,9 +4,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
+using MemoryGame.Data;
 using MemoryGame.Entities;
-using MemoryGame.ViewModels;
 using MemoryGame.Views.GameElements;
+using Task3_MemoryGame_MVVM.ViewModels;
 
 namespace MemoryGame.Views.GamePad
 {
@@ -22,7 +23,7 @@ namespace MemoryGame.Views.GamePad
         {
             InitializeComponent();
 
-            DataContext = new MemoryGame.ViewModels.VMGamePad(rows, cols);
+            DataContext = new VMGamePad(rows, cols);
 
             TimerStart();
             BuildGamePad();
@@ -59,11 +60,11 @@ namespace MemoryGame.Views.GamePad
 
         private void BuildGamePad()
         {
-            this.Background = new SolidColorBrush(Colors.RosyBrown);
             Grid mainGrid = new Grid
             {
                 HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = (Brush)this.Resources["BackgroundDarkBlue"]
             };
 
             if (DataContext is VMGamePad viewGamePad)
@@ -88,6 +89,7 @@ namespace MemoryGame.Views.GamePad
                     for (int column = 0; column < viewGamePad.Columns; column++)
                     {
                         Card card = new Card(viewGamePad.Cards[row, column]);
+                        card.Style = (Style)this.Resources["GameCardButton"];
 
                         card.Click += (sender, args) =>
                         {
@@ -140,11 +142,12 @@ namespace MemoryGame.Views.GamePad
         private void BuildTopTimerPanel(Grid mainGrid, VMGamePad gamePad)
         {
             Grid topTimePanel = new Grid();
-            topTimePanel.Background = new SolidColorBrush(Colors.RosyBrown);
+            topTimePanel.Background = (Brush)this.Resources["BackgroundBlue"];
 
             _timerLabel.FontSize = 40;
             _timerLabel.HorizontalAlignment = HorizontalAlignment.Center;
             _timerLabel.VerticalAlignment = VerticalAlignment.Center;
+            _timerLabel.Foreground = (Brush)this.Resources["ForegroundWhite"];
             _timerLabel.Content = "00:00";
 
             topTimePanel.Children.Add(_timerLabel);
@@ -156,15 +159,15 @@ namespace MemoryGame.Views.GamePad
 
         private void BuildVictoryPanel()
         {
-            this.Background = new SolidColorBrush(Colors.RosyBrown);
+            this.Background = (Brush)this.Resources["BackgroundDarkBlue"];
 
             Grid gtidVictory = new Grid
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                Height = 300,
-                Width = 290,
-                Background = new SolidColorBrush(Colors.PeachPuff)
+                Height = this.Height - (this.Height / 4),
+                Width = this.Width -(this.Width / 2),
+                Background = (Brush)this.Resources["BackgroundBlue"],
             };
 
             RowDefinition rowsDefinition1 = new RowDefinition { Height = new GridLength(50) };
@@ -172,7 +175,7 @@ namespace MemoryGame.Views.GamePad
             gtidVictory.RowDefinitions.Add(new RowDefinition());
             gtidVictory.RowDefinitions.Add(new RowDefinition());
 
-            RowDefinition rowsDefinition4 = new RowDefinition { Height = GridLength.Auto };
+            RowDefinition rowsDefinition4 = new RowDefinition { Height = new GridLength(0.5, GridUnitType.Star) };
             gtidVictory.RowDefinitions.Add(rowsDefinition4);
 
             TextBlock topTextVictory = new TextBlock
@@ -180,7 +183,8 @@ namespace MemoryGame.Views.GamePad
                 Text = "ПОБЕДА!",
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 30,
-                FontWeight = FontWeights.Bold
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Colors.LimeGreen)
             };
             gtidVictory.Children.Add(topTextVictory);
             Grid.SetRow(topTextVictory, 0);
@@ -190,7 +194,8 @@ namespace MemoryGame.Views.GamePad
                 Text = "Количество попыток:",
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 20,
-                FontWeight = FontWeights.Bold
+                FontWeight = FontWeights.Bold,
+                Foreground = (Brush)this.Resources["ForegroundWhite"]
             };
 
             TextBlock textAttempts = new TextBlock
@@ -198,7 +203,8 @@ namespace MemoryGame.Views.GamePad
                 Text = _attempts.ToString(),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 20,
-                FontWeight = FontWeights.Bold
+                FontWeight = FontWeights.Bold,
+                Foreground = (Brush)this.Resources["ForegroundWhite"]
             };
 
             StackPanel stackForAttempts = new StackPanel();
@@ -213,7 +219,8 @@ namespace MemoryGame.Views.GamePad
                 Text = "Количество времени:",
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 20,
-                FontWeight = FontWeights.Bold
+                FontWeight = FontWeights.Bold,
+                Foreground = (Brush)this.Resources["ForegroundWhite"]
             };
 
             _attempts++;
@@ -222,7 +229,8 @@ namespace MemoryGame.Views.GamePad
                 Text = _currentTime,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 FontSize = 20,
-                FontWeight = FontWeights.Bold
+                FontWeight = FontWeights.Bold,
+                Foreground = (Brush)this.Resources["ForegroundWhite"]
             };
 
             StackPanel stackForTime = new StackPanel();
@@ -234,7 +242,8 @@ namespace MemoryGame.Views.GamePad
 
             Button buttonBack = new Button
             {
-                Content = "НАЗАД"
+                Content = "НАЗАД",
+                Style = (Style)this.Resources["MainButton"]
             };
             gtidVictory.Children.Add(buttonBack);
             Grid.SetRow(buttonBack, 3);
@@ -242,6 +251,7 @@ namespace MemoryGame.Views.GamePad
             buttonBack.Click += (sender2, args2) =>
             {
                 GlobalMenu globalMenu = new GlobalMenu();
+                DataBaseContext.GetInstance().Images.Clear();
                 globalMenu.Show();
                 this.Close();
             };
