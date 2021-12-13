@@ -1,11 +1,10 @@
 ﻿using System;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using Task3_MemoryGame_MVVM.Data;
-using Task3_MemoryGame_MVVM.Views.GamePad;
+using MemoryGame.Data;
+using MemoryGame.Views.GamePad;
 
-namespace Task3_MemoryGame_MVVM
+namespace MemoryGame
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -17,9 +16,11 @@ namespace Task3_MemoryGame_MVVM
             InitializeComponent();
         }
 
+        #region Button
+
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            if (DBContext.getInstance().Images.Count > 1)
+            if (DataBaseContext.GetInstance().Images.Count > 1)
             {
                 int rows = Convert.ToInt32(RowsTextBlock.Text);
                 int columns = Convert.ToInt32(ColumnsTextBlock.Text);
@@ -39,7 +40,7 @@ namespace Task3_MemoryGame_MVVM
             }
             else
             {
-                MessageBox.Show("Ввыберите картинки", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show("Выберите картинки", "ОШИБКА!", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
 
@@ -47,6 +48,10 @@ namespace Task3_MemoryGame_MVVM
         {
             this.Close();
         }
+
+        #endregion
+
+        #region SliderColumnsRows
 
         private void Slider_Columns_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -58,11 +63,13 @@ namespace Task3_MemoryGame_MVVM
             RowsTextBlock.Text = Convert.ToInt32((sender as Slider).Value).ToString();
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        #endregion
+
+        private void CheckBox_Image_Checked(object sender, RoutedEventArgs e)
         {
             string path = @"..\..\Resources\Images\" + (sender as CheckBox).Name + ".png";
 
-            DBContext.getInstance().Images.Add(new Entities.Image() { FileName = path });
+            DataBaseContext.GetInstance().Images.Add(new Entities.Image() { FileName = path });
         }
     }
 }
