@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconBrain.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -116,7 +119,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Views\GamePad\icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\chocolate.png" />
     <Resource Include="Resources\Images\cocktail.png" />
@@ -130,6 +135,15 @@
     <Resource Include="Resources\Images\star.png" />
     <Resource Include="Resources\Images\sun.png" />
     <Resource Include="Resources\Images\traffic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\GamePad\iconBrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Menu\iconBrain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconBrain.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

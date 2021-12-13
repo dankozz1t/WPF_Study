@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:tools="clr-namespace:MemoryGame.Resources.Tools"
         mc:Ignorable="d"
-        Title="GAME MEMORY" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="GAME MEMORY" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="iconBrain.png">
 
     <Window.Resources>
         <!--Подключение ресурсов цветовая тема, стили-->

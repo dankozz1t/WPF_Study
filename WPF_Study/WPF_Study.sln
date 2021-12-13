@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2_Calculator", "..\Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Study_ServerManager", "..\WPF_Study_ServerManager\WPF_Study_ServerManager.csproj", "{9B29B8CE-74C9-40F4-81EB-1C6992761AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryGame", "..\Task3_MemoryGame_MVVM\MemoryGame.csproj", "{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryGame", "..\MemoryGame\MemoryGame.csproj", "{17E0D6B1-F1F0-44E7-AF39-3A5E7AEED388}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
