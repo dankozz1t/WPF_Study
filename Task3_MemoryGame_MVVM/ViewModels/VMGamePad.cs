@@ -6,7 +6,7 @@ using MemoryGame.Annotations;
 using MemoryGame.Data;
 using MemoryGame.Views.GameElements;
 
-namespace MemoryGame.ViewModels
+namespace Task3_MemoryGame_MVVM.ViewModels
 {
     public class VMGamePad : INotifyPropertyChanged
     {
@@ -33,7 +33,7 @@ namespace MemoryGame.ViewModels
             bool isPair = true;
             int indexCurrentCard = 0;
 
-            List<Entities.Image> images = DataBaseContext.GetInstance().Images;
+            List<MemoryGame.Entities.Image> images = DataBaseContext.GetInstance().Images;
 
             for (int row = 0; row < Rows; row++)
             {

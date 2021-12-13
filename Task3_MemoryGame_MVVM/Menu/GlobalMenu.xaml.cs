@@ -37,6 +37,7 @@ namespace MemoryGame
                 this.Hide();
                 play.ShowDialog();
                 this.Close();
+
             }
             else
             {

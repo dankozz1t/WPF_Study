@@ -1,22 +1,23 @@
 ﻿<Window x:Class="MemoryGame.GlobalMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:tools="clr-namespace:MemoryGame.Resources.Tools"
         mc:Ignorable="d"
         Title="GAME MEMORY" Height="450" Width="800" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <!--Подключение ресурсов цветовая тема-->
+        <!--Подключение ресурсов цветовая тема, стили-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Resources/ColorTheme/MainСolorTheme.xaml" />
+                <ResourceDictionary Source="../Resources/ColorTheme/Style.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Background="{DynamicResource Brown_StoneWall}">
+    <Grid  x:Name="ZGrid"  Background="{DynamicResource BackgroundDarkBlue}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
@@ -34,8 +35,8 @@
                                          HorizontalAlignment="Center" VerticalAlignment="Center" Bold="True" Font="Showcard Gothic" >
                 <tools:OutlinedText.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFFE800" Offset="0"/>
-                        <GradientStop Color="#FFFB7121" Offset="1"/>
+                        <GradientStop Color="#06BEE1" Offset="0"/>
+                        <GradientStop Color="#1768AC" Offset="1"/>
                     </LinearGradientBrush>
                 </tools:OutlinedText.Fill>
             </tools:OutlinedText>
@@ -43,16 +44,16 @@
 
         <Grid Grid.Row="1" Grid.Column="0">
             <!--НАСТРОЙКИ ПОЛЯ-->
-            <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Margin="100,20,15,20" Foreground="{DynamicResource Orange_Honey}" BorderBrush="{DynamicResource Red_Terracotta}" FontSize="20">
+            <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Margin="100,20,15,20" Foreground="{DynamicResource ForegroundWhite}" BorderBrush="{DynamicResource ForegroundWhite}" FontSize="20">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock  Text="Столбцов" Foreground="{DynamicResource Red_Terracotta}" FontSize="20" ></TextBlock>
+                        <TextBlock  Text="Столбцов" Foreground="{DynamicResource ForegroundWhite}" FontSize="20" ></TextBlock>
 
                         <TextBlock Name="ColumnsTextBlock" Margin="20,0,0,0" FontSize="20">2</TextBlock>
                         <Slider Orientation="Horizontal" Width="100" Margin="20,0,0,0" Maximum="8" ValueChanged="Slider_Columns_ValueChanged" TickPlacement="BottomRight" Minimum="2" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock  Text="Рядов" Foreground="{DynamicResource Red_Terracotta}" FontSize="20"></TextBlock>
+                        <TextBlock  Text="Рядов" Foreground="{DynamicResource ForegroundWhite}" FontSize="20"></TextBlock>
 
                         <TextBlock Name="RowsTextBlock" Margin="55,0,0,0" FontSize="20">2</TextBlock>
                         <Slider Orientation="Horizontal" Width="100" Margin="20,0,0,0" Maximum="8" ValueChanged="Slider_Rows_ValueChanged" Minimum="2" TickPlacement="BottomRight" />
@@ -61,10 +62,9 @@
             </GroupBox>
         </Grid>
 
-
         <Grid Grid.Row="1" Grid.Column="1">
             <!--НАСТРОЙКИ ПОЛЯ-->
-            <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Foreground="{DynamicResource Orange_Honey}" BorderBrush="{DynamicResource Red_Terracotta}" FontSize="20" Margin="15,20,100,20">
+            <GroupBox Header="НАСТРОЙКИ ПОЛЯ" Foreground="{DynamicResource ForegroundWhite}" BorderBrush="{DynamicResource ForegroundWhite}" FontSize="20" Margin="15,20,100,20">
                 <WrapPanel Orientation="Horizontal">
                     <StackPanel Margin="5">
                         <Image Source="../Resources/Images/crown.png" Width="50" HorizontalAlignment="Left"/>
@@ -129,9 +129,18 @@
             </GroupBox>
         </Grid>
 
-        <!--Нижняя панель с кнопками-->
-        <Button Grid.Row="2" Grid.Column="0" Width="200" HorizontalAlignment="Right" Margin="0,0,10,10" Background="{DynamicResource Beige_Biscotti}" FontWeight="Bold" FontSize="20" Foreground="{DynamicResource Red_Terracotta}" Click="Button_Play_Click">ИГРАТЬ</Button>
-        <Button Grid.Row="2" Grid.Column="1" Width="200" HorizontalAlignment="Left" Margin="10,0,0,10" Background="{DynamicResource Beige_Biscotti}" FontWeight="Bold" FontSize="20" Foreground="{DynamicResource Red_Terracotta}" Click="Button_Exit_Click">ВЫХОД</Button>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <!--Нижняя панель с кнопками-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Style="{DynamicResource MainButton}" HorizontalAlignment="Stretch" Margin="0,0,10,10" FontWeight="Bold" FontSize="20"  Click="Button_Play_Click" >ИГРАТЬ</Button>
+            <Button Grid.Column="2" Style="{DynamicResource MainButton}" HorizontalAlignment="Stretch" Margin="10,0,0,10" FontWeight="Bold" FontSize="20"  Click="Button_Exit_Click" >ВЫХОД</Button>
+        </Grid>
 
     </Grid>
 </Window>
