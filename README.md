@@ -6,7 +6,7 @@
 ### > 5. Работа с панелью, цветные кнопки
 ---
 ## 1. Экзаменационный проект игра на память выполненная на WPF
-![Демонстрация](![Демонстрация](https://github.com/dankozz1t/WPF_Study/blob/main/MemoryGame/giHub%20Демонстрация%20Игра%20Памяти.png)
+![Демонстрация](https://github.com/dankozz1t/WPF_Study/blob/main/MemoryGame/giHub%20Демонстрация%20Игра%20Памяти.png)
 ---
 ## 2. Работа с данными, мини сервер-менеджер
 ![Демонстрация](https://github.com/dankozz1t/WPF_Study/blob/main/WPF_Study_ServerManager/DBGroupProj/Демонстрация%20Возможностей.png)
